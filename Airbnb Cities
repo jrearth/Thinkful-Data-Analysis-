@@ -1,1 +1,11 @@
 
+Select Listing By Price Limit 1 
+From Prices
+
+Select Listing By Region 
+Where Region > 100 visits 
+Limit 10
+From Area
+
+
+3?
