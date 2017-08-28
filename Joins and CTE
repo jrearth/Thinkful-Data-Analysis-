@@ -18,4 +18,5 @@ ON
     t.start_station = s.name 
 GROUP BY 1
 
-
+3?
+4?
