@@ -1,1 +1,21 @@
+SELECT
+    (CASE WHEN station  < 10 THEN 'large' ELSE 'small' END) station_size,
+    COUNT(*) as station_count
+FROM 
+    stations
+GROUP BY 1
+
+SELECT
+    s.city,
+    AVG(s.lat) lat,
+    AVG(s.long) long,
+    COUNT(*)
+FROM
+    stations s
+JOIN
+    trips t
+ON
+    t.start_station = s.name 
+GROUP BY 1
+
 
