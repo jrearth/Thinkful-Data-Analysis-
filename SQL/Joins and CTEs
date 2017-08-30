@@ -1,0 +1,50 @@
+SELECT 
+    t.trip_id, 
+    t.duration, 
+    DATE(t.start_date) date_trip
+FROM
+    trips t
+JOIN
+    weather w
+ON
+    date_trip=w.Date
+GROUP BY 1, 2, 3
+ORDER BY 2 DESC
+LIMIT 3
+
+WITH rain_stations AS (
+    SELECT
+        w.Date,
+        w.ZIP,
+        s.station_id
+    FROM weather w
+    JOIN trips t
+        ON t.zip_code = w.ZIP
+    JOIN stations s
+        ON s.name = t.start_station
+    WHERE
+        w.PrecipitationIn != 0
+    GROUP BY 1,2,3
+)
+
+SELECT
+	  AVG(st.docks_available),
+	  r.station_id
+FROM
+	  status st
+JOIN
+	  rain_stations r
+ON
+  	st.station_id = r.station_id AND
+  	Date(st.timestamp) = r.Date
+GROUP BY 2
+
+SELECT
+    station_id,
+COUNT(*)
+FROM
+    status
+WHERE
+    bikes_available = 0
+GROUP BY 1
+ORDER BY 2 DESC
