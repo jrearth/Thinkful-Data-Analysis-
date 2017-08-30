@@ -1,0 +1,11 @@
+SELECT
+    listings.Price,
+    lsitings.id,
+    calender.season,
+    calender.Availbity_365
+FROM
+    lisitngs
+JOIN
+    calendar
+ON
+    Popular times = seasons listings 
