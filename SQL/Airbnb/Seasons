@@ -1,0 +1,5 @@
+select S.Season,
+Avg(l.listings),
+Count(listings) listings
+Count by 1
+From PopTime
