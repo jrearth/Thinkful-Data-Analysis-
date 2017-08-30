@@ -1,0 +1,5 @@
+Select neighburhood, 
+Count (*) neighburhood, 
+Case(WHEN avalibility_365 > 100 THEN 'unpopular' ELSE 'popular' END)
+Count by neighburhood
+From listings 
