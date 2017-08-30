@@ -1,1 +1,19 @@
+select Date, ZIP, 
+Max(MaxTemperatureF) MaxTemperatureF
+From weather 
 
+Select start_station, 
+Count (start_station)
+count by 1
+from trips
+
+
+
+select Duration
+ Min(Duration),
+From trips
+
+Select end_station, 
+avg(duration) duration 
+Count by 1
+From trips
