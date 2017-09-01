@@ -33,4 +33,19 @@ FROM
 
 ORDER by st.bikes_available desc
 
-3.
+3. SELECT 
+	s.name 
+	s.dockcount
+	s.station_id
+	count(s.station_id)
+	
+FROM 
+	Stations 
+LEFT JOIN
+	trips
+ON 
+	s.station_id = t.start_station
+SELECT 
+	t.start_station
+	
+Order by s.dockcount desc
