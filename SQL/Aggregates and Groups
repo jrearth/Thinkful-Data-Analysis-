@@ -4,16 +4,16 @@ From weather
 
 Select start_station, 
 Count (start_station)
-count by 1
 from trips
+group by start_station
 
 
 
-select Duration
- Min(Duration),
+select trip_id
+ Min(Duration) Duration,
 From trips
 
 Select end_station, 
 avg(duration) duration 
-Count by 1
 From trips
+group by end_station
