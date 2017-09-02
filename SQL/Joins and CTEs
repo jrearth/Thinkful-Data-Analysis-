@@ -15,21 +15,17 @@ LIMIT 3
 2. SELECT 
  s.station_id
  s.name
+ st.station_id
+ st.bikes_available
  
 FROM 
  stations
+
 RIGHT JOIN
  status
+
 ON
 s.station_id = st.station_id
-
-SELECT 
- st.station_id
- st.bikes_available
-
-
-FROM
- Status 
 
 ORDER by st.bikes_available desc
 
@@ -38,6 +34,7 @@ ORDER by st.bikes_available desc
 	s.dockcount
 	s.station_id
 	count(s.station_id)
+	t.start_station
 	
 FROM 
 	Stations 
@@ -45,7 +42,5 @@ LEFT JOIN
 	trips
 ON 
 	s.station_id = t.start_station
-SELECT 
-	t.start_station
-	
+
 Order by s.dockcount desc
