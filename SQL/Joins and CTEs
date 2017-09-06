@@ -54,4 +54,32 @@ ON
 ORDER BY
 	stations.dockcount 
 	
-4.
+4. WITH rain_stations AS (
+    SELECT
+        weather.Date,
+        weather.ZIP,
+        stations.station_id
+    FROM 
+		weather 
+	
+    JOIN trips 
+        ON trips.zip_code = weather.ZIP
+    JOIN stations 
+        ON stations.name = trips.start_station
+    WHERE
+        w.PrecipitationIn != 0 )
+
+SELECT 
+	rain_stations.station_id
+	trips.duration
+
+FROM 
+	trips
+JOIN 
+	rain_stations
+ON 
+	status.station_id = rain_stations.station_id 
+	AND 
+	Date(status.timestamp) = rain_stations.Date
+	
+	GROUP BY DATE 
