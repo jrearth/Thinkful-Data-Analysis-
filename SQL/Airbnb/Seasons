@@ -1,5 +1,14 @@
-select S.Season,
-Avg(l.listings),
-Count(listings) listings
-Count by 1
-From PopTime
+SELECT 
+  listings.Availibity_365 
+  listings.Price 
+  
+FROM 
+  listings 
+ 
+JOIN 
+  calender
+ON calender.listing_id = listings.listing_id 
+
+Group by lsitings.Date, 4
+  
+  
