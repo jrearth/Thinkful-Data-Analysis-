@@ -41,8 +41,7 @@ LIMIT 100
 	stations.name,
 	stations.dockcount,
 	stations.station_id,
-	trips.start_station,
-	COUNT(stations.station_id)
+	trips.start_station
 	
 FROM 
 	stations
