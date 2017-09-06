@@ -1,3 +1,6 @@
-Select *,
-max(Price) Price 
-From Listings 
+SELECT 
+  *,
+  max(Price) Price
+  
+FROM
+  Listings 
