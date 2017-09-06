@@ -1,14 +1,23 @@
 1. SELECT 
-   
+	trips.duration
+	trips.start_date
+	weather.Date
+	
+	
 FROM
-    trips t
+	trips
 JOIN
-    weather w
+	weather
 ON
-    date_trip=w.Date
-GROUP BY 1, 2, 3
-ORDER BY 2 DESC
+	weather.date = trips.start_date
+
+WHERE 
+	Events = 'rain'
+
+ORDER BY duration DESC
 LIMIT 3
+
+
 
 2. SELECT 
 	station_id,
@@ -27,18 +36,23 @@ ORDER BY
 	COUNT(*) DESC
 	
 LIMIT 100
+
 3. SELECT 
-	station.name 
-	station.dockcount
-	station.station_id
-	count(stations.station_id)
-	trips.start_station
+	stations.name,
+	stations.dockcount,
+	stations.station_id,
+	trips.start_station,
+	COUNT(stations.station_id),
 	
 FROM 
-	stations 
-LEFT JOIN
-	trips
-ON 
-	s.station_id = t.start_station
+	stations
 
-Order by s.dockcount desc
+JOIN
+	trips
+ON
+	stations.station_id = trips.start_station
+	
+ORDER BY
+	stations.dockcount 
+	
+4.
