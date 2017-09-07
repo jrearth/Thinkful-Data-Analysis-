@@ -1,7 +1,8 @@
 SELECT
   neighburhood, 
-  COUNT(Availibility_365),
-  Price
+  COUNT(availibility_365),
+  price,
+  
 FROM 
   listings 
 GROUP BY neighburhood
