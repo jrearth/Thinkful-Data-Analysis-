@@ -1,11 +1,11 @@
 SELECT
-    listings.Price,
+    listings.price,
     lsitings.id,
-    calender.season,
-    calender.Availbity_365
+    calender.date,
+    listings.availbity_365
 FROM
     lisitngs
 JOIN
     calendar
 ON
-    Popular times = seasons listings 
+    listings.id = calender.id 
