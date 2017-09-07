@@ -1,14 +1,15 @@
-SELECT 
-  listings.Availibity_365 
-  listings.Price 
-  
-FROM 
-  listings 
- 
-JOIN 
-  calender
-ON calender.listing_id = listings.listing_id 
+SELECT
+    listings.price,
+    lsitings.id,
+    calender.date,
+    listings.availbity_365
+FROM
+    lisitngs
+JOIN
+    calendar
+ON
+    listings.id = calender.id 
 
-Group by lsitings.Date, 4
+Group by lsitings.date, 4
   
   
