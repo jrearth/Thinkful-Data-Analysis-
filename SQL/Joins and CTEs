@@ -41,7 +41,7 @@ LIMIT 100
 	stations.name,
 	stations.dockcount,
 	stations.station_id,
-	trips.start_station
+	COUNT(trips.trip_id)
 	
 FROM 
 	stations
@@ -49,7 +49,10 @@ FROM
 JOIN
 	trips
 ON
-	stations.station_id = trips.start_station
+	stations.name = trips.start_station
+	
+GROUP BY 
+	stations.name
 	
 ORDER BY
 	stations.dockcount 
