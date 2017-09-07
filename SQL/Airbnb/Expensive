@@ -1,6 +1,6 @@
 SELECT 
   *,
-  max(Price) Price
+  max(price) price
   
 FROM
   Listings 
