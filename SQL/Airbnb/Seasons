@@ -1,7 +1,7 @@
 SELECT
     listings.price,
     lsitings.id,
-    calender.date,
+    Groupby (calender.date) 4,
     listings.availbity_365
 FROM
     lisitngs
@@ -10,6 +10,6 @@ JOIN
 ON
     listings.id = calender.id 
 
-Group by lsitings.date, 4
+Group by lsitings.date
   
   
