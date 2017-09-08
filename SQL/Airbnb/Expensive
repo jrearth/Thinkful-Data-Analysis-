@@ -1,6 +1,13 @@
-SELECT 
-  *,
-  max(price) price
-  
-FROM
-  Listings 
+SELECT
+	name,
+	price,
+	room_type,
+	neighbourhood,
+	availability_365
+	
+FROM 
+	listings
+
+ORDER BY price DESC 
+
+LIMIT 1
