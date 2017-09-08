@@ -1,22 +1,20 @@
 1. SELECT 
-	trips.duration
-	trips.start_date
-	weather.Date
-	
+	trips.duration,
+	substr(trips.start_date,0,11),
+	trips.trip_id
 	
 FROM
 	trips
 JOIN
 	weather
 ON
-	weather.date = trips.start_date
+	substr(trips.start_date,0,11) = weather.Date
 
 WHERE 
-	Events = 'rain'
+	Events = 'Rain'
 
 ORDER BY duration DESC
 LIMIT 3
-
 
 
 2. SELECT 
